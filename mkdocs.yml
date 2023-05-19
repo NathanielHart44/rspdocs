@@ -1,0 +1,67 @@
+site_name: Revenue Share Protocol
+extra_css:
+  - stylesheets/extra.css
+theme:
+  logo: assets/logoBLU.png
+  favicon: assets/favicon.png
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.expand
+    - navigation.sections
+    - navigation.indexes
+    - toc.integrate
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+  language: en
+  palette:
+      scheme: nfty
+  # icon:
+  #     admonition:
+  #         warning: octicons/alert-24
+  #         note: material/notebook-plus
+  #         tip: octicons/light-bulb-24
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.mark
+  - footnotes
+  - attr_list
+  - admonition
+
+nav:
+  - 'Getting Started': 'index.md'
+  - 'Migrating to RSP': 'migrate.md'
+  - 'Common Endpoints': 'info-endpoints.md'
+  - 'Revenue Share': 'revenue-share.md'
+  - 'Blockchain Integration': 'blockchain.md'
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/NFTy-Arcade/RevenueShareProtocol
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/NFTyArcade
+    - icon: fontawesome/brands/linkedin-in
+      link: https://www.linkedin.com/company/nfty-arcade
+
+# copyright: |
+#   &copy; 2023 <a href="https://www.nftyarcade.io"  target="_blank" rel="noopener">NFTy Arcade</a>
+#   <img src="assets/premium_nfty.svg" alt="NFTy Arcade" width="20" height="20" style="vertical-align: middle;">
+
+copyright: |
+  &copy; 2023 <a href="https://www.nftyarcade.io"  target="_blank" rel="noopener">NFTy Arcade</a>
