@@ -20,3 +20,5 @@ Call the `create_players` endpoint for all players in your game. This will creat
         # Error occurred while creating players
         # Handle the error response
     ```
+
+*More to come*
