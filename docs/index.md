@@ -6,11 +6,11 @@ RSP is a RESTful API that provides a centralized way for game developers to acce
 
 Before you can start integrating RSP into your game, make sure you have the following:
 
-- **Account Credentials**: Create an account with us to obtain your unique `RSP_KEY`. This key is required to authenticate your requests to the RSP API.
+- **Account Credentials**: Request your unique `RSP_KEY`. This key is required to authenticate your requests to the RSP API.
 
 ### Making Requests to RSP
 
-RSP is a RESTful API, allowing you to make HTTP requests in your preferred programming language. The following sections provide examples in popular game development languages.
+You can submit requests to the RSP API in any programming language that supports HTTP requests. An example using Python is provided below.
 
 === "Python"
     ``` py
@@ -43,6 +43,19 @@ To ensure the security of your RSP key and protect it from unauthorized access, 
 
 When interacting with the RSP API, it is important to understand the error handling and response format to effectively handle responses and troubleshoot integration issues. While the exact formatting of every endpoint's response may vary, RSP follows a standard format.
 
+### Response Structure
+
+The response from the RSP API typically consists of two main parts:
+
+- **Success**: The `success` field indicates whether the requested action was able to execute without any errors or if any of the requested information was successfully retrieved. It is a boolean value, where `True` signifies successful execution, and `False` indicates an error or unsuccessful operation.
+
+- **Response**: The `response` field contains the information relevant to the requested action or retrieved data. Its structure may vary depending on the specific endpoint. In the example above, the `sample_response_data` dictionary provides the `results`, `has_next_page`, and `cursor` information.
+
+    !!! nfty-note "Note"
+        If the `success` field is `False`, the `response` field will contain an error message explaining why the operation was unsuccessful.
+
+### Example Response
+
 === "Python"
     ``` py
     sample_response_data = {
@@ -68,17 +81,6 @@ When interacting with the RSP API, it is important to understand the error handl
         { "response", sampleResponseData },
     };
     ```
-
-### Response Structure
-
-The response from the RSP API typically consists of two main parts:
-
-- **Success**: The `success` field indicates whether the requested action was able to execute without any errors or if any of the requested information was successfully retrieved. It is a boolean value, where `True` signifies successful execution, and `False` indicates an error or unsuccessful operation.
-
-- **Response**: The `response` field contains the information relevant to the requested action or retrieved data. Its structure may vary depending on the specific endpoint. In the example above, the `sample_response_data` dictionary provides the `results`, `has_next_page`, and `cursor` information.
-
-    !!! nfty-note "Note"
-        If the `success` field is `False`, the `response` field will contain an error message explaining why the operation was unsuccessful.
 
 ### Error Handling
 

@@ -35,10 +35,10 @@ Example Response Body (Success):
     ```json
     {
         "success": true,
-            "response": {
-                "players_created": 3,
-                "pre-existing_players": []
-            }
+        "response": {
+            "players_created": 3,
+            "pre-existing_players": []
+        }
     }
     ```
 
@@ -47,9 +47,9 @@ Example Response Body (Error):
     ```json
     {
         "success": false,
-            "response": {
-                "error": "Invalid request payload"
-            }
+        "response": {
+            "error": "Invalid request payload"
+        }
     }
     ```
 
@@ -132,20 +132,22 @@ Example Response Body (Success):
         "success": true,
         "response": {
             "lender_ign": "lender_username",
-            "nfts": [
-            {
-                "name": "NFT Name",
-                "token_id": "nft1",
-                "description": "NFT Description",
-                "image": "https://example.com/nft-image.png"
+            "nfts": {
+                "owned_not_available": [],
+                "owned_and_available": [
+                    {
+                        "uuid": "1",
+                        "owner_ign": "lender_username",
+                        "player_ign": "player_username"
+                    },
+                    {
+                        "uuid": "2",
+                        "owner_ign": "lender_username",
+                        "player_ign": "player_username"
+                    }
+                ],
+                "available_not_owned": []
             },
-            {
-                "name": "NFT Name",
-                "token_id": "nft2",
-                "description": "NFT Description",
-                "image": "https://example.com/nft-image.png"
-            }
-            ],
             "listing_id": "listing_id"
         }
     }
