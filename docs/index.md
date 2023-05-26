@@ -18,7 +18,7 @@ You can submit requests to the RSP API in any programming language that supports
     from tictactokens.settings import RSP_KEY, RSP_URL
 
     rsp_headers = {"RSP_KEY": RSP_KEY}
-    response = requests.get(f"{RSP_URL}/get_game_info/", headers=rsp_headers)
+    response = requests.get(f"{RSP_URL}/get_player_inventory/player_1_ign/", headers=rsp_headers)
     ```
 
 In the code snippet above, ensure that you replace `RSP_KEY` with your actual RSP key and `RSP_URL` with the appropriate base URL for the RSP API.

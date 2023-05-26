@@ -78,7 +78,9 @@ To create players and integrate with the RSP API, you can make a POST request to
     payload = {
         "igns": ["player1", "player2", "player3"]
     }
+
     rsp_players = rsp_create_players(payload)
+    
     if rsp_players["success"]:
         # Players created successfully
         # Handle the response data as needed
@@ -190,7 +192,9 @@ To retrieve the player's inventory from the RSP API, you can make a POST request
         "nfts_in_wallet": ["nft1", "nft2"],
         "availability_types": ["owned_and_available"]
     }
+
     rsp_inventory = get_rsp_inventory(ign, payload)
+
     if rsp_inventory["success"]:
         # Handle the inventory response data as needed
     else:
@@ -272,6 +276,7 @@ To retrieve the rewards split information from the RSP API, you can make a GET r
     ```python
     ign = "player1"
     rsp_rewards_split = get_rsp_rewards_split(ign)
+
     if rsp_rewards_split["success"]:
         # Handle the rewards split response data as needed
     else:

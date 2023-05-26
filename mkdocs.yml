@@ -45,9 +45,9 @@ markdown_extensions:
 nav:
   - 'Getting Started': 'index.md'
   - 'Migrating to RSP': 'migrate.md'
-  - 'Common Endpoints': 'info-endpoints.md'
+  - 'Core Endpoints': 'info-endpoints.md'
   - 'Revenue Share': 'revenue-share.md'
-  - 'Blockchain Integration': 'blockchain.md'
+  # - 'Blockchain Integration': 'blockchain.md'
 
 extra:
   generator: false
