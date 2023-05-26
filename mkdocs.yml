@@ -46,7 +46,7 @@ nav:
   - 'Getting Started': 'index.md'
   - 'Migrating to RSP': 'migrate.md'
   - 'Core Endpoints': 'info-endpoints.md'
-  - 'Revenue Share': 'revenue-share.md'
+  - 'Revenue Share Endpoints': 'revenue-share.md'
   # - 'Blockchain Integration': 'blockchain.md'
 
 extra:

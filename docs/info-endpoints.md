@@ -80,7 +80,7 @@ To create players and integrate with the RSP API, you can make a POST request to
     }
 
     rsp_players = rsp_create_players(payload)
-    
+
     if rsp_players["success"]:
         # Players created successfully
         # Handle the response data as needed
@@ -105,9 +105,9 @@ The request should include the following parameters:
 
 - `nfts_in_wallet` (list): A list of token IDs representing the NFTs in the player's wallet.
 - `availability_types` (optional): A list of availability types to filter the inventory response. This parameter can be specified as a list of the following values, or omitted to retrieve all NFTs:
-    - `playable` - NFTs that are owned by the player and available to be used in-game by this player.
-    - `lent` - NFTs that are owned by the player but are currently not able to be used in-game by this player.
-    - `rented` - NFTs that are owned by another player but are currently being used in-game by this player.
+    - `owned_and_available` - NFTs that are owned by the player and available to be used in-game by this player.
+    - `owned_not_available` - NFTs that are owned by the player but are currently not able to be used in-game by this player.
+    - `available_not_owned` - NFTs that are owned by another player but are currently being used in-game by this player.
 
 Example Request Body:
 
@@ -115,7 +115,7 @@ Example Request Body:
     ```json
     {
         "nfts_in_wallet": ["nft1", "nft2"],
-        "availability_types": ["lent", "rented"]
+        "availability_types": ["owned_and_available", "available_not_owned"]
     }
     ```
 
@@ -133,24 +133,15 @@ Example Response Body (Success):
     {
         "success": true,
         "response": {
-            "lender_ign": "lender_username",
-            "nfts": {
-                "owned_not_available": [],
-                "owned_and_available": [
-                    {
-                        "uuid": "1",
-                        "owner_ign": "lender_username",
-                        "player_ign": "player_username"
-                    },
-                    {
-                        "uuid": "2",
-                        "owner_ign": "lender_username",
-                        "player_ign": "player_username"
-                    }
-                ],
-                "available_not_owned": []
-            },
-            "listing_id": "listing_id"
+            "lender_ign": "lender_username"
+            "owned_not_available": [],
+            "owned_and_available": [
+                "1",
+                "2"
+            ],
+            "available_not_owned": [
+                "3"
+            ]
         }
     }
     ```
