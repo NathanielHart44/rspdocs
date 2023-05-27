@@ -27,8 +27,8 @@ Example Request Body:
 
 The response from the `create_players` endpoint follows a standard format:
 
-- `success` (boolean): Indicates whether the players were successfully created (`true`) or if there was an error during the creation process (`false`).
-- `response` (object): Contains additional information about the players created and any potential errors.
+- `players_created` (int): The number of players that were successfully created.
+- `pre-existing_players` (list): A list of players that already existed in the RSP database.
 
 Example Response Body (Success):
 === "JSON"
@@ -123,8 +123,10 @@ Example Request Body:
 
 The response from the `get_player_inventory` endpoint follows a standard format:
 
-- `success` (boolean): Indicates whether the request was successful (`true`) or if an error occurred during the process (`false`).
-- `response` (object): Contains the inventory information for the player, including owned and available NFTs, owned but not available NFTs, and available but not owned NFTs.
+- `lender_ign` (string): The in-game name (IGN) of the player who lent the NFTs to the player. Is `null` if there are no NFTs in the `available_not_owned` category.
+- `owned_not_available` (list): A list of token IDs representing the NFTs that are owned by the player but are currently not able to be used in-game by this player.
+- `owned_and_available` (list): A list of token IDs representing the NFTs that are owned by the player and available to be used in-game by this player.
+- `available_not_owned` (list): A list of token IDs representing the NFTs that are owned by another player but are currently being used in-game by this player.
 
 Example Response Body (Success):
 
@@ -134,13 +136,12 @@ Example Response Body (Success):
         "success": true,
         "response": {
             "lender_ign": "lender_username"
-            "owned_not_available": [],
             "owned_and_available": [
-                "1",
-                "2"
+                "nft_1",
+                "nft_2"
             ],
             "available_not_owned": [
-                "3"
+                "nft_3"
             ]
         }
     }
@@ -195,7 +196,7 @@ To retrieve the player's inventory from the RSP API, you can make a POST request
 
 ## Get Rewards Split
 
-The `get_rewards_split` endpoint retrieves the rewards split information for a specific player in the RSP API. This endpoint accepts a GET request to retrieve the rewards split data.
+The `get_rewards_split` endpoint retrieves the rewards split information for a specific player who is a borrower in the RSP API. This endpoint accepts a GET request to retrieve the rewards split data.
 
 #### Endpoint URL
 
@@ -217,8 +218,8 @@ GET /get_rewards_split/player1/
 
 The response from the `get_rewards_split` endpoint follows a standard format:
 
-- `success` (boolean): Indicates whether the request was successful (`true`) or if an error occurred during the process (`false`).
-- `response` (object): Contains the rewards split information for the player, including the lender's in-game name (IGN) and the percentage split.
+- `lender_ign` (string): The in-game name (IGN) of the player who lent the NFTs to the player via a Listing.
+- `lender_percent` (int): The percentage of the rewards that the lender will receive.
 
 Example Response Body (Success):
 
@@ -242,6 +243,9 @@ Example Response Body (Error):
         "response": "Player not found"
     }
     ```
+
+!!! nfty-note "Note"
+    If `get_rewards_split` is called for a player who is a lender of a Listing (and not a borrower on a different Listing), the response will be `{}`.
 
 #### Integration Example
 
