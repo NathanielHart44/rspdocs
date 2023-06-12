@@ -220,6 +220,8 @@ The response from the `get_rewards_split` endpoint follows a standard format:
 
 - `lender_ign` (string): The in-game name (IGN) of the player who lent the NFTs to the player via a Listing.
 - `lender_percent` (int): The percentage of the rewards that the lender will receive.
+- `fee_address` (string): The in-game name (IGN) of RSP account that will receive the fee for the Listing.
+- `fee_percent` (int): The percentage of the rewards that will be paid as a fee to the RSP account.
 
 Example Response Body (Success):
 
@@ -229,7 +231,9 @@ Example Response Body (Success):
         "success": true,
         "response": {
             "lender_ign": "lender_username",
-            "lender_percent": 70
+            "lender_percent": 70,
+            "fee_address": "rsp_account_username",
+            "fee_percent": 10
         }
     }
     ```
