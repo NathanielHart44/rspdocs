@@ -81,6 +81,10 @@
     background-color: var(--md-default-fg-color--lightest);
 }
 
+.md-nav--primary .md-nav__title[for=__drawer] {
+    background-color: var(--md-default-bg-color--light);
+}
+
 :root>* {
     --md-mermaid-edge-color: var(--md-code-fg-color);
     --md-mermaid-node-bg-color: var(--md-accent-fg-color--transparent);
