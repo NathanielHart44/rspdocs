@@ -222,6 +222,8 @@ The response from the `get_rewards_split` endpoint follows a standard format:
 - `lender_percent` (int): The percentage of the rewards that the lender will receive.
 - `rsp_ign` (string): The in-game name (IGN) of RSP account that will receive the fee for the Listing.
 - `rsp_percent` (int): The percentage of the rewards that will be paid as a fee to the RSP account.
+- `game_ign` (string): The in-game name (IGN) of the account that will receive the game's fee for the Listing.
+- `game_percent` (int): The percentage of the rewards that will be paid as a fee to the game's account.
 
 Example Response Body (Success):
 
@@ -231,9 +233,11 @@ Example Response Body (Success):
         "success": true,
         "response": {
             "lender_ign": "lender_username",
-            "lender_percent": 70,
+            "lender_percent": 60,
             "rsp_ign": "rsp_account_username",
-            "rsp_percent": 10
+            "rsp_percent": 10,
+            "game_ign": "game_account_username",
+            "game_percent": 5
         }
     }
     ```
