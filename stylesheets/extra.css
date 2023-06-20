@@ -1,0 +1,134 @@
+[data-md-color-scheme="nfty"] {
+    --md-primary-fg-color: #68DCFC;
+    --md-primary-fg-color--light: #A4EAFD;
+    --md-primary-fg-color--lighter: #D1F4FE;
+    --md-primary-fg-color--lightest: #def1f6;
+    --md-primary-fg-color--dark: #13A9D2;
+    --md-primary-fg-color--darker: #0584A7;
+    --md-primary-fg-color--darkest: #02556c;
+    --md-primary-bg-color: #C4CDD5;
+    
+    --md-default-fg-color: var(--md-primary-bg-color);
+    --md-default-fg-color--light: var(--md-primary-bg-color);
+    --md-default-fg-color--lighter: #454F5B;
+    --md-default-fg-color--lightest: #212B36;
+    --md-default-bg-color: #161C24;
+    
+    --md-accent-fg-color: var(--md-primary-fg-color--dark);
+    --md-accent-bg-color: var(--md-default-fg-color);
+    --md-accent-fg-color--transparent: rgba(2, 85, 108, 0.1);
+
+    --md-default-bg-color--light: #212B36;
+    --md-default-bg-color--lighter: #ffffff4d;
+    --md-default-bg-color--lightest: #ffffff1f;
+    --md-code-fg-color: #ABB6C0;
+    --md-code-bg-color: #212B36;
+    --md-code-hl-color: var(--md-accent-fg-color--transparent);
+    --md-code-hl-number-color: var(--md-primary-fg-color--lighter);
+    --md-code-hl-special-color: var(--md-primary-fg-color--lightest);
+    --md-code-hl-function-color: var(--md-primary-fg-color);
+    --md-code-hl-constant-color: #FABC85;
+    --md-code-hl-keyword-color: var(--md-primary-fg-color--darker);
+    --md-code-hl-string-color: #F6790B;
+   
+    /* --md-code-hl-number-color: #d52a2a;
+    --md-code-hl-special-color: #db1457;
+    --md-code-hl-function-color: #a846b9;
+    --md-code-hl-constant-color: #6e59d9;
+    --md-code-hl-keyword-color: #3f6ec6;
+    --md-code-hl-string-color: #1c7d4d; */
+
+    --md-code-hl-name-color: var(--md-code-fg-color);
+
+    --md-code-hl-operator-color: var(--md-default-fg-color--light);
+    --md-code-hl-punctuation-color: var(--md-default-fg-color--light);
+    --md-code-hl-comment-color: var(--md-default-fg-color--light);
+    --md-code-hl-generic-color: var(--md-default-fg-color--light);
+    --md-code-hl-variable-color: var(--md-default-fg-color--light);
+
+    --md-typeset-color: var(--md-default-fg-color);
+    --md-typeset-a-color: var(--md-primary-fg-color);
+    --md-typeset-mark-color: rgba(2, 85, 108, 0);
+    --md-typeset-del-color: #f5503d26;
+    --md-typeset-ins-color: #0bd57026;
+    --md-typeset-kbd-color: #fafafa;
+    --md-typeset-kbd-accent-color: var(--md-default-fg-color);
+    --md-typeset-kbd-border-color: #b8b8b8;
+    --md-typeset-table-color: #0000001f;
+    --md-typeset-table-color--light: rgba(0,0,0,.035);
+    --md-admonition-fg-color: var(--md-default-fg-color);
+    --md-admonition-bg-color: var(--md-default-bg-color);
+    --md-warning-fg-color: #000000de;
+    --md-warning-bg-color: #ff9;
+    --md-footer-fg-color: var(--md-default-fg-color);
+    --md-footer-fg-color--light: #ffffffb3;
+    --md-footer-fg-color--lighter: #ffffff73;
+    --md-footer-bg-color: #000000de;
+    --md-footer-bg-color--dark: #00000052;
+    --md-shadow-z1: 0 0.2rem 0.5rem #0000000d,0 0 0.05rem #0000001a;
+    --md-shadow-z2: 0 0.2rem 0.5rem #0000001a,0 0 0.05rem #00000040;
+    --md-shadow-z3: 0 0.2rem 0.5rem #0003,0 0 0.05rem #00000059;
+}
+
+.md-header {
+    background-color: var(--md-default-bg-color);
+}
+
+.md-footer-meta {
+    background-color: var(--md-default-bg-color);
+}
+.md-tabs {
+    background-color: var(--md-default-fg-color--lightest);
+}
+
+.md-nav--primary .md-nav__title[for=__drawer] {
+    background-color: var(--md-default-bg-color--light);
+}
+
+:root>* {
+    --md-mermaid-edge-color: var(--md-code-fg-color);
+    --md-mermaid-node-bg-color: var(--md-accent-fg-color--transparent);
+    --md-mermaid-node-fg-color: var(--md-accent-fg-color);
+    --md-mermaid-label-bg-color: var(--md-default-bg-color);
+    --md-mermaid-label-fg-color: var(--md-code-fg-color);
+}
+
+:root {
+    --md-admonition-icon--nfty-note: url('/assets/alert-circle-outline.svg');
+    --md-admonition-icon--nfty-warning: url('/assets/alert-triangle-outline.svg');
+}
+
+.md-typeset .admonition.nfty-note,
+.md-typeset .admonition.nfty-warning,
+.md-typeset details.nfty-note {
+    border-color: rgb(104, 220, 252);
+}
+
+.md-typeset details.nfty-warning {
+    border-color: rgb(104, 220, 252);
+}
+
+.md-typeset .nfty-note > .admonition-title,
+.md-typeset .nfty-warning > .admonition-title,
+.md-typeset .nfty-note > summary {
+    background-color: rgba(104, 220, 252, 0.1);
+}
+
+.md-typeset .nfty-warning > summary {
+    background-color: rgba(104, 220, 252, 0.1);
+}
+
+.md-typeset .nfty-note > .admonition-title::before,
+.md-typeset .nfty-warning > .admonition-title::before,
+.md-typeset .nfty-note > summary::before {
+    background-color: rgb(104, 220, 252);
+    -webkit-mask-image: var(--md-admonition-icon--nfty-note);
+    mask-image: var(--md-admonition-icon--nfty-note);
+}
+
+.md-typeset .nfty-warning > summary::before {
+    background-color: rgb(104, 220, 252);
+    -webkit-mask-image: var(--md-admonition-icon--nfty-warning);
+    mask-image: var(--md-admonition-icon--nfty-warning);
+}  
+  
