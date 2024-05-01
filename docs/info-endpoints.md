@@ -19,7 +19,7 @@ Example Request Body:
 === "JSON"
     ```json
     {
-        "igns": ["player1", "player2", "player3"]
+        "igns": ["PLAYER1", "PLAYER2", "PLAYER3"]
     }
     ```
 
@@ -28,7 +28,7 @@ Example Request Body:
 The response from the `create_players` endpoint follows a standard format:
 
 - `players_created` (int): The number of players that were successfully created.
-- `pre-existing_players` (list): A list of players that already existed in the RSP database.
+- `pre-existing_players` (list): A list of players that already existed in the RSP records.
 
 Example Response Body (Success):
 === "JSON"
@@ -76,7 +76,7 @@ To create players and integrate with the RSP API, you can make a POST request to
 === "Python"
     ```python
     payload = {
-        "igns": ["player1", "player2", "player3"]
+        "igns": ["PLAYER1", "PLAYER2", "PLAYER3"]
     }
 
     rsp_players = rsp_create_players(payload)
@@ -114,7 +114,7 @@ Example Request Body:
 === "JSON"
     ```json
     {
-        "nfts_in_wallet": ["nft1", "nft2"],
+        "nfts_in_wallet": ["NFT1", "NFT2"],
         "availability_types": ["owned_and_available", "available_not_owned"]
     }
     ```
@@ -137,11 +137,11 @@ Example Response Body (Success):
         "response": {
             "lender_ign": "lender_username"
             "owned_and_available": [
-                "nft_1",
-                "nft_2"
+                "NFT1",
+                "NFT2"
             ],
             "available_not_owned": [
-                "nft_3"
+                "NFT3"
             ]
         }
     }
@@ -179,9 +179,9 @@ To retrieve the player's inventory from the RSP API, you can make a POST request
 
 === "Python"
     ```python
-    ign = "player1"
+    ign = "PLAYER1"
     payload = {
-        "nfts_in_wallet": ["nft1", "nft2"],
+        "nfts_in_wallet": ["NFT1", "NFT2"],
         "availability_types": ["owned_and_available"]
     }
 
@@ -211,7 +211,7 @@ The request does not require a request body. You can include the player's in-gam
 Example Request:
 
 ```
-GET /get_rewards_split/player1/
+GET /get_rewards_split/<PLAYER1>/
 ```
 
 #### Response Format
@@ -277,7 +277,7 @@ To retrieve the rewards split information from the RSP API, you can make a GET r
 
 === "Python"
     ```python
-    ign = "player1"
+    ign = "PLAYER1"
     rsp_rewards_split = get_rsp_rewards_split(ign)
 
     if rsp_rewards_split["success"]:

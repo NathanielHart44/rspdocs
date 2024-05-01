@@ -1,6 +1,8 @@
 # Getting Started
 
-RSP is a RESTful API that provides a centralized way for game developers to access and manage player data across different games and platforms. This guide will help you set up your development environment and make requests to the RSP API.
+### What is RSP?
+
+We built RSP to provide a simple, robust, and scalable way for web3 multiplayer games to provide revenue sharing to their player and investor bases. The RSP API provides a unified interface for managing player data and relationships, giving you the tools to create engaging and rewarding experiences for your players with previously unfeasible functionality.
 
 ### Prerequisites
 
@@ -18,7 +20,7 @@ You can submit requests to the RSP API in any programming language that supports
     from tictactokens.settings import RSP_KEY, RSP_URL
 
     rsp_headers = {"RSP_KEY": RSP_KEY}
-    response = requests.get(f"{RSP_URL}/get_player_inventory/player_1_ign/", headers=rsp_headers)
+    response = requests.get(f"{RSP_URL}/get_player_inventory/<PLAYER_IGN>/", headers=rsp_headers)
     ```
 
 In the code snippet above, ensure that you replace `RSP_KEY` with your actual RSP key and `RSP_URL` with the appropriate base URL for the RSP API.
@@ -36,8 +38,6 @@ To ensure the security of your RSP key and protect it from unauthorized access, 
 - **Auditing and Monitoring**: Implement logging and monitoring mechanisms to track the usage of the RSP key within your game application. Regularly review the logs to detect any suspicious activity or unauthorized access attempts.
 
 - **Secure Development Practices**: Follow secure coding practices to prevent common vulnerabilities, such as injection attacks or unintentional exposure of sensitive data. Be cautious when logging or debugging your game, ensuring that the RSP key is not inadvertently included in log files or error messages.
-
-<!-- - Key Rotation: Periodically rotate your RSP key to mitigate the risk of compromise. Establish a key rotation policy and update the key at regular intervals or in response to any security incidents. -->
 
 ## Error and Response Handling
 
@@ -59,9 +59,9 @@ The response from the RSP API typically consists of two main parts:
 === "Python"
     ``` py
     sample_response_data = {
-        'results': [...],
-        'has_next_page': True,
         'cursor': a1sd3iu7ag_32jf93nf84fk39Rgknmm08nf,
+        'has_next_page': True,
+        'results': [...],
     }
 
     response = { "success": True, "response": sample_response_data }

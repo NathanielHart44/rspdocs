@@ -18,7 +18,7 @@ The request does not require a request body. You need to include the player's in
 Example Request:
 
 ```
-GET /get_player_listings/player1/
+GET /get_player_listings/<PLAYER1>/
 ```
 
 #### Response Format
@@ -39,22 +39,22 @@ Example Response Body (Success):
                 {
                     "id": 1,
                     "item_name": "Item 1",
-                    "borrower": "player1",
-                    "lender": "lender1"
+                    "borrower": "PLAYER1",
+                    "lender": "LENDER1"
                 },
                 {
                     "id": 2,
                     "item_name": "Item 2",
-                    "borrower": "player1",
-                    "lender": "lender2"
+                    "borrower": "PLAYER1",
+                    "lender": "LENDER2"
                 }
             ],
             "lent_listings": [
                 {
                     "id": 3,
                     "item_name": "Item 3",
-                    "borrower": "player2",
-                    "lender": "player1"
+                    "borrower": "PLAYER2",
+                    "lender": "PLAYER1"
                 },
                 {
                     "id": 4,
@@ -63,7 +63,7 @@ Example Response Body (Success):
                         "4b"
                     ],
                     "description": "Item 4",
-                    "lender_ign": "player1",
+                    "lender_ign": "PLAYER1",
                     "tier": ,
                     "player_rating": 0,
                     "contract": {},
@@ -112,7 +112,7 @@ To retrieve the player's listings from the RSP API, you can make a GET request t
 
 === "Python"
     ```python
-    ign = "player1"
+    ign = "PLAYER1"
     rsp_listings = get_player_listings(ign)
     
     if rsp_listings["success"]:

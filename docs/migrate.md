@@ -11,12 +11,12 @@ The first step to integration is implementing all of the core endpoints into you
 - `get_player_inventory`
 - `get_reward_split`
 
-After implementing these endpoints, you should call the `create_players` endpoint for all players in your game. This will create a player account for each player in the database.
+After implementing these endpoints, you should call the `create_players` endpoint for all players in your game. This will create a player account for each player in the RSP records.
 
 === "Python"
     ```python
     payload = {
-        "igns": ["player1", "player2", "player3"]
+        "igns": ["PLAYER1", "PLAYER2", "PLAYER3"]
     }
     rsp_players = rsp_create_players(payload)
     if rsp_players["success"]:
@@ -28,4 +28,4 @@ After implementing these endpoints, you should call the `create_players` endpoin
     ```
 
 !!! nfty-note "Note"
-    The `create_players` endpoint will only create player accounts for players that do not already exist in the RSP database. If they already exist, the endpoint will not create a new one. This means that you can safely call the `create_players` endpoint for all players in your game, and it will not create any duplicates.
+    The `create_players` endpoint will only create player accounts for players that do not already exist in the RSP records. If they already exist, the endpoint will not create a new one. This means that you can safely call the `create_players` endpoint for all players in your game, and it will not create any duplicates.
